@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            color: #838bc2; /* Periwinkle text color */
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            width: 800px; /* Overall width */
+            background-color: #ffffff; /* White for the main container */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(131, 139, 194, 0.3); /* Periwinkle shadow */
+            overflow: hidden;
+        }
+
+        /* Left Side: Welcome Section */
+        .welcome-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px 20px 20px; /* Added top padding for spacing */
+            position: relative;
+        }
+
+        .welcome-section h1 {
+            font-size: 48px; /* Increased font size */
+            font-weight: bold;
+            text-align: center;
+            color: #838bc2; /* Periwinkle text color */
+            margin-bottom: 20px;
+            position: relative;
+            top: -40px; /* Slightly higher for spacing */
+        }
+
+        /* Right Side: Login Form */
+        .login-container {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #838bc2; /* Periwinkle title */
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #838bc2; /* Periwinkle border */
+            border-radius: 25px;
+            outline: none;
+            color: #838bc2; /* Periwinkle text */
+            background-color: #ffffff; /* White input background */
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover and Focus Effects for Input Fields */
+        .form-group input[type="text"]:hover,
+        .form-group input[type="password"]:hover,
+        .form-group input[type="text"]:focus,
+        .form-group input[type="password"]:focus {
+            border-color: #a58cb3; /* Lavender on hover */
+            box-shadow: 0 0 5px rgba(165, 140, 179, 0.5);
+        }
+
+        /* Sign In Button */
+        .sign-in-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #d9a1a0; /* Rosewater button */
+            border: none;
+            border-radius: 50%;
+            color: #ffffff; /* White arrow color */
+            font-size: 24px;
+            cursor: pointer;
+            margin: 20px auto 0 auto;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #a58cb3; /* Lavender on hover */
+            transform: scale(1.1);
+        }
+
+        /* Sign Up Link */
+        .sign-up-link {
+            display: block;
+            text-align: center;
+            color: #d9a1a0; /* Rosewater link color */
+            font-size: 14px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .sign-up-link:hover {
+            color: #a58cb3; /* Lavender on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Left Side: Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome Back!</h1>
+            <p>Are you already registered? Please log in.</p>
+        </div>
+
+        <!-- Right Side: Login Form -->
+        <div class="login-container">
+            <div class="login-title">Sign in</div>
+            <form>
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="sign-in-btn">&#10140;</button>
+            </form>
+            <a href="#" class="sign-up-link">Don't have an account? Sign up</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            color: #838bc2; /* Periwinkle text color */
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            width: 800px; /* Overall width */
+            background-color: #ffffff; /* White for the main container */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(131, 139, 194, 0.3); /* Periwinkle shadow */
+            overflow: hidden;
+        }
+
+        /* Left Side: Welcome Section */
+        .welcome-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px 20px 20px; /* Added top padding for spacing */
+            position: relative;
+        }
+
+        .welcome-section h1 {
+            font-size: 48px; /* Increased font size */
+            font-weight: bold;
+            text-align: center;
+            color: #838bc2; /* Periwinkle text color */
+            margin-bottom: 20px;
+            position: relative;
+            top: -20px; /* Slightly higher for spacing */
+        }
+
+        /* Right Side: Login Form */
+        .login-container {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #838bc2; /* Periwinkle title */
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #838bc2; /* Periwinkle border */
+            border-radius: 25px;
+            outline: none;
+            color: #838bc2; /* Periwinkle text */
+            background-color: #ffffff; /* White input background */
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover and Focus Effects for Input Fields */
+        .form-group input[type="text"]:hover,
+        .form-group input[type="password"]:hover,
+        .form-group input[type="text"]:focus,
+        .form-group input[type="password"]:focus {
+            border-color: #a58cb3; /* Lavender on hover */
+            box-shadow: 0 0 5px rgba(165, 140, 179, 0.5);
+        }
+
+        /* Sign In Button */
+        .sign-in-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: #d9a1a0; /* Rosewater button */
+            border: none;
+            border-radius: 50%;
+            color: #ffffff; /* White arrow color */
+            font-size: 24px;
+            cursor: pointer;
+            margin: 20px auto 0 auto;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #a58cb3; /* Lavender on hover */
+            transform: scale(1.1);
+        }
+
+        /* Sign Up Link */
+        .sign-up-link {
+            display: block;
+            text-align: center;
+            color: #d9a1a0; /* Rosewater link color */
+            font-size: 14px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .sign-up-link:hover {
+            color: #a58cb3; /* Lavender on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Left Side: Welcome Section -->
+        <div class="welcome-section">
+            <h1>Welcome Back!</h1>
+        </div>
+
+        <!-- Right Side: Login Form -->
+        <div class="login-container">
+            <div class="login-title">Login in</div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="sign-in-btn">&#10140;</button>
+            </form>
+            <a href="#" class="sign-up-link">Don't have an account? Sign up</a>
+        </div>
+    </div>
+
+</body>
+</html>

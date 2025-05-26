@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
+        .container { max-width: 400px; padding: 20px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); border-radius: 8px; }
+        h1 { font-size: 24px; text-align: center; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { width: 100%; padding: 10px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 4px; }
+        button:hover { background-color: #45a049; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Admission Checker</h1>
+
+    <!-- Admission Form -->
+    <form id="admissionForm">
+        <label for="university">Select University:</label>
+        <select id="university" required>
+            <option value="">--Choose University--</option>
+            <option value="stanford">Stanford University</option>
+            <option value="oxford">University of Oxford</option>
+            <option value="mit">Massachusetts Institute of Technology</option>
+            <option value="harvard">Harvard University</option>
+        </select>
+
+        <label for="gpa">GPA (out of 5):</label>
+        <input type="number" id="gpa" step="0.1" min="0" max="5" required>
+
+        <label for="sop">Do you have an SOP? (yes/no):</label>
+        <input type="text" id="sop" required>
+
+        <label for="recommendation">Do you have recommendations? (yes/no):</label>
+        <input type="text" id="recommendation" required>
+
+        <label for="extracurriculars">Do you have extracurriculars? (yes/no):</label>
+        <input type="text" id="extracurriculars" required>
+
+        <button type="button" onclick="checkAdmission()">Check Admission</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    const universities = {
+        "stanford": { min_gpa: 4.0, threshold_score: 6, score_requirements: { sop: 3, recommendation: 2, extracurriculars: 2 } },
+        "oxford": { min_gpa: 4.2, threshold_score: 6, score_requirements: { sop: 2, recommendation: 2, extracurriculars: 3 } },
+        "mit": { min_gpa: 4.0, threshold_score: 6, score_requirements: { sop: 3, recommendation: 1, extracurriculars: 2 } },
+        "harvard": { min_gpa: 4.3, threshold_score: 6, score_requirements: { sop: 2, recommendation: 2, extracurriculars: 2 } }
+    };
+
+    function checkAdmission() {
+        const university = document.getElementById('university').value;
+        const gpa = parseFloat(document.getElementById('gpa').value);
+        const sop = document.getElementById('sop').value.toLowerCase() === 'yes';
+        const recommendation = document.getElementById('recommendation').value.toLowerCase() === 'yes';
+        const extracurriculars = document.getElementById('extracurriculars').value.toLowerCase() === 'yes';
+
+        // Validate university selection
+        if (!university || !universities[university]) {
+            document.getElementById('result').textContent = "Please select a valid university.";
+            return;
+        }
+
+        const uniCriteria = universities[university];
+
+        // Check GPA
+        if (gpa < uniCriteria.min_gpa) {
+            document.getElementById('result').textContent = "Admission Unlikely: GPA below the minimum requirement.";
+            return;
+        }
+
+        // Calculate score based on submitted documents
+        let score = 0;
+        score += sop ? uniCriteria.score_requirements.sop : 0;
+        score += recommendation ? uniCriteria.score_requirements.recommendation : 0;
+        score += extracurriculars ? uniCriteria.score_requirements.extracurriculars : 0;
+
+        // Display result
+        const resultText = score >= uniCriteria.threshold_score
+            ? `Admission Likely: Your score is ${score}, which meets the threshold.`
+            : `Admission Unlikely: Your score is ${score}, which does not meet the threshold.`;
+        
+        document.getElementById('result').textContent = resultText;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        /* Container Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        .signup-container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Header Styling */
+        .signup-container h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Button Styling */
+        button[type="submit"] {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form onsubmit="return registerUser()">
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" required>
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" required>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    
